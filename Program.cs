@@ -113,20 +113,6 @@ public class Student
                $"Grades for Homeworks: {string.Join(", ", GradesForHomeworks)}\n" +
                $"Grades for Exams: {string.Join(", ", GradesForExams)}\n";
     }
-
-
-    static void Main()
-    {
-        Address address = new Address("Украина", "Одесса", "Космонавтов", 56, 49);
-
-        Student student = new Student("Голикова", "Анастасия", "Павловна", new DateTime(2005, 12, 15), address, "+380 xxx xxxx");
-
-        student.GradesForTests = new List<int> { 10, 9, 11 };
-        student.GradesForHomeworks = new List<int> { 9, 8, 10 };
-        student.GradesForExams = new List<int> { 10, 9, 10 };
-
-        Console.WriteLine(student.ToString());
-    }
 }
 
 public class Address
@@ -178,5 +164,22 @@ public class Address
     public override string ToString()
     {
         return $"{Country}, {City}, {Street}, {HouseNumber}, {ApartmentNumber}";
+    }
+}
+
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Address address = new Address("Украина", "Одесса", "Космонавтов", 56, 49);
+
+        Student student = new Student("Голикова", "Анастасия", "Павловна", new DateTime(2005, 12, 15), address, "+380 xxx xxxx");
+
+        student.GradesForTests = new List<int> { 10, 9, 11 };
+        student.GradesForHomeworks = new List<int> { 9, 8, 10 };
+        student.GradesForExams = new List<int> { 10, 9, 10 };
+
+        Console.WriteLine(student.ToString());
     }
 }
